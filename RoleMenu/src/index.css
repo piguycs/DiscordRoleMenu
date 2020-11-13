@@ -5,3 +5,7 @@ body {
   background-color: #36393F;
   color: #F2FFFF;
 }
+
+.btn {
+  margin-top: 5px;
+}
