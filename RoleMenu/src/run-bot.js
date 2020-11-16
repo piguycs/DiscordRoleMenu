@@ -5,19 +5,7 @@ activateBtn.onclick = runBot;
 
 
 async function runBot() {
-    // console.log('Click')
-    // exec("node bot.js", (error, stdout, stderr) => {
-    //     if (error) {
-    //         console.log(`error: ${error.message}`);
-    //         return;
-    //     }
-    //     if (stderr) {
-    //         console.log(`stderr: ${stderr}`);
-    //         return;
-    //     }
-    //     console.log(`stdout: ${stdout}`);
-    // });
-
+    
     require('dotenv').config();
 
     const Discord = require('discord.js');
