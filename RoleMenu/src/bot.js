@@ -19,14 +19,20 @@ client.on('ready', () => {
 });
 
 client.on('message', msg => {
-    console.log(msg.content);
+    if (msg.attachments.size > 0) {
+        console.log(`${msg.member.user.tag}: ATTACHED FILE, Captions: ${msg.content}`);
+    } else {
+        console.log(`${msg.member.user.tag}: ${msg.content}`);
+    }
 });
 
 
 // Write JSON stuff to file
 client.on('message', msg => {
-    storeData(msg.guild.roles, "temp.json");
-    console.log(msg.guild.roles)
+    if (msg.content === 'role') {
+        storeData(msg.guild.roles, "temp.json");
+        console.log(msg.guild.roles)
+    }
 });
 
 client.on('message', msg => {
