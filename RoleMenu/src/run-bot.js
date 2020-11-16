@@ -63,5 +63,5 @@ async function runBot() {
 
 
     // login
-    client.login("Nzc2ODU3ODI2MDMwOTExNTA5.X66_Ow.YMBE7zJZitP_ZuwPeDGmOkXzHWY");
+    client.login(TOKEN);
 }
