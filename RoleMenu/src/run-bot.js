@@ -1,4 +1,3 @@
-const { exec } = require("child_process");
 const activateBtn = document.getElementById("startbutton");
 
 activateBtn.onclick = runBot;
