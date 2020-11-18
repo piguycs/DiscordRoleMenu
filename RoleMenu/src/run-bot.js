@@ -4,8 +4,10 @@ const activateBtn = document.getElementById("startbutton");
 activateBtn.onclick = runBot;
 
 
+// This part does the thing
 async function runBot() {
     
+    // Trying to get this to be included in build
     require('dotenv').config();
 
     const Discord = require('discord.js');
@@ -13,6 +15,7 @@ async function runBot() {
     const TOKEN = process.env.TOKEN;
     const fs = require('fs')
 
+    // Helps in doing that
     const storeData = (data, path) => {
         try {
             fs.writeFileSync(path, JSON.stringify(data, null, 2))
@@ -22,6 +25,7 @@ async function runBot() {
     }
 
 
+    // The main part of the thing
     client.on('ready', () => {
         console.log(`Logged in as ${client.user.tag}!`);
     });

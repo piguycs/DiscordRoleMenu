@@ -1,3 +1,6 @@
+// NOT USED ANYMORE
+// COZ ELECTRON HATES ME
+
 require('dotenv').config();
 
 const Discord = require('discord.js');
