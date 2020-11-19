@@ -4,6 +4,9 @@
   "version": "0.0.1",
   "description": "A simple server maniging control panel for discord",
   "main": "src/index.js",
+  "files": [
+    "secrets"
+  ],
   "scripts": {
     "start": "electron-forge start",
     "package": "electron-forge package",

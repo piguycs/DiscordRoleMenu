@@ -12,15 +12,11 @@ async function runBot() {
     const Discord = require('discord.js');
     const client = new Discord.Client();
     const TOKEN = process.env.TOKEN;
-    const fs = require('fs')
+    const { writeFile } = require('fs');
 
     // Helps in doing that
     const storeData = (data, path) => {
-        try {
-            fs.writeFileSync(path, JSON.stringify(data, null, 2))
-        } catch (err) {
-            console.error(err)
-        }
+        writeFile(path, JSON.stringify(data, null, 2))
     }
 
 
