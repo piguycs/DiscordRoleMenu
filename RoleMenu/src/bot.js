@@ -34,6 +34,7 @@ client.on('message', msg => {
 client.on('message', msg => {
     if (msg.content === 'role') {
         storeData(msg.guild.roles, "temp.json");
+        msg.channel.send('All the roles logged')
         console.log(msg.guild.roles)
     }
 });
