@@ -1,6 +1,4 @@
-// NOT USED ANYMORE
-// COZ ELECTRON HATES ME
-
+// Trying to get this to be included in build
 require('dotenv').config();
 
 const Discord = require('discord.js');
@@ -8,6 +6,7 @@ const client = new Discord.Client();
 const TOKEN = process.env.TOKEN;
 const fs = require('fs')
 
+// Helps in doing that
 const storeData = (data, path) => {
     try {
         fs.writeFileSync(path, JSON.stringify(data, null, 2))
@@ -17,6 +16,7 @@ const storeData = (data, path) => {
 }
 
 
+// The main part of the thing
 client.on('ready', () => {
     console.log(`Logged in as ${client.user.tag}!`);
 });

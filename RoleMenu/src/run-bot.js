@@ -54,6 +54,6 @@ async function runBot() {
 
 
     // login
-    console.log(TOKEN)
+    console.log(TOKEN);
     client.login(TOKEN);
 }
