@@ -7,12 +7,7 @@ module.exports = {
 
         const Discord = require('discord.js');
         const client = new Discord.Client();
-        const { writeFile } = require('fs');
-
-        // Helps in doing that
-        const storeData = (data, path) => {
-            writeFile(path, JSON.stringify(data, null, 2))
-        }
+        const { writeFileSync } = require('fs');
 
 
         // The main part of the thing
@@ -38,6 +33,8 @@ module.exports = {
                     .join("\n");
                 if (!roleList) roleList = "No roles";
                 msg.channel.send(roleList);
+
+                writeFileSync("temp.txt", roleList);
             }
         });
 
