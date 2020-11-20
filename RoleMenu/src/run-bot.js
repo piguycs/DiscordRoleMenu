@@ -5,9 +5,8 @@ activateBtn.onclick = runBot;
 
 // This part does the thing
 async function runBot() {
-    
-    // Trying to get this to be included in build
-    require('dotenv').config();
+
+    // its definately dotenv
     const budgetenv = require('./secret/token.js');
 
     const Discord = require('discord.js');
@@ -50,6 +49,5 @@ async function runBot() {
 
 
     // login
-    console.log(budgetenv.token);
     client.login(budgetenv.token);
 }

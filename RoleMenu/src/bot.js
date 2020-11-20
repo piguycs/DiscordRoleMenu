@@ -1,50 +1,51 @@
-// Trying to get this to be included in build
-require('dotenv').config();
+// This part does the thing
+async function runBot() {
 
-const Discord = require('discord.js');
-const client = new Discord.Client();
-const TOKEN = process.env.TOKEN;
-const fs = require('fs')
+    // its definately dotenv
+    const budgetenv = require('./secret/token.js');
 
-// Helps in doing that
-const storeData = (data, path) => {
-    try {
-        fs.writeFileSync(path, JSON.stringify(data, null, 2))
-    } catch (err) {
-        console.error(err)
+    const Discord = require('discord.js');
+    const client = new Discord.Client();
+    const { writeFile } = require('fs');
+
+    // Helps in doing that
+    const storeData = (data, path) => {
+        writeFile(path, JSON.stringify(data, null, 2))
     }
+
+
+    // The main part of the thing
+    client.on('ready', () => {
+        console.log(`Logged in as ${client.user.tag}!`);
+    });
+
+    client.on('message', msg => {
+        if (msg.attachments.size > 0) {
+            console.log(`${msg.member.user.tag}: ATTACHED FILE, Captions: ${msg.content}`);
+        } else {
+            console.log(`${msg.member.user.tag}: ${msg.content}`);
+        }
+    });
+
+
+    // Write JSON stuff to file
+    client.on('message', msg => {
+        if (msg.content === 'role') {
+            const roleList = msg.guild.roles;
+            console.log(roleList)
+        }
+    });
+
+    client.on('message', msg => {
+        if (msg.content === 'ping') {
+            msg.reply('Pong!');
+        }
+    });
+
+
+    // login
+    client.login(budgetenv.token);
 }
 
 
-// The main part of the thing
-client.on('ready', () => {
-    console.log(`Logged in as ${client.user.tag}!`);
-});
-
-client.on('message', msg => {
-    if (msg.attachments.size > 0) {
-        console.log(`${msg.member.user.tag}: ATTACHED FILE, Captions: ${msg.content}`);
-    } else {
-        console.log(`${msg.member.user.tag}: ${msg.content}`);
-    }
-});
-
-
-// Write JSON stuff to file
-client.on('message', msg => {
-    if (msg.content === 'role') {
-        storeData(msg.guild.roles, "temp.json");
-        msg.channel.send('All the roles logged')
-        console.log(msg.guild.roles)
-    }
-});
-
-client.on('message', msg => {
-    if (msg.content === 'ping') {
-        msg.reply('Pong!');
-    }
-});
-
-
-// login
-client.login(TOKEN);
+runBot()
