@@ -4,7 +4,6 @@ module.exports = {
 
         // its definately dotenv
         const budgetenv = require('../secret/token.js');
-        const praser = require('./rolepraser.js')
 
         const Discord = require('discord.js');
         const client = new Discord.Client();
@@ -33,13 +32,12 @@ module.exports = {
         // Write JSON stuff to file
         client.on('message', msg => {
             if (msg.content === 'role') {
-                const roleList = msg.guild.roles;
-                console.log(roleList)
-                if (roleList) {
-                    msg.channel.send("Roles logged")
-                } else {
-                    msg.channel.send("Roles not logged cuz ummm....")
-                }
+                let rolemap = msg.guild.roles.cache
+                    .sort((a, b) => b.position - a.position)
+                    .map(r => r)
+                    .join(",");
+                if (!rolemap) rolemap = "No roles";
+                msg.channel.send(rolemap);
             }
         });
 
