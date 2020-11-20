@@ -34,6 +34,11 @@ module.exports = {
             if (msg.content === 'role') {
                 const roleList = msg.guild.roles;
                 console.log(roleList)
+                if (roleList) {
+                    msg.channel.send("Roles logged")
+                } else {
+                    msg.channel.send("Roles not logged cuz ummm....")
+                }
             }
         });
 
