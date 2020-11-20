@@ -3,7 +3,8 @@ module.exports = {
     botsrc: async function runBot() {
 
         // its definately dotenv
-        const budgetenv = require('./secret/token.js');
+        const budgetenv = require('../secret/token.js');
+        const praser = require('./rolepraser.js')
 
         const Discord = require('discord.js');
         const client = new Discord.Client();
