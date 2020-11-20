@@ -35,8 +35,8 @@ module.exports = {
                 let roleList = msg.guild.roles.cache
                     .sort((a, b) => b.position - a.position)
                     .map(r => r)
-                    .join(",");
-                if (!rolemap) rolemap = "No roles";
+                    .join("\n");
+                if (!roleList) roleList = "No roles";
                 msg.channel.send(roleList);
             }
         });
