@@ -66,6 +66,20 @@ module.exports = {
 
 
         client.on('message', msg => {
+            if (msg.content === 'chadrole') {
+                let rolemap = msg.guild.roles.cache
+                    .sort((a, b) => b.position - a.position)
+                    .map(r => r)
+                    .join(",");
+                if (rolemap.length > 1024) rolemap = "To many roles to display";
+                if (!rolemap) rolemap = "No roles";
+                const embed = new Discord.MessageEmbed()
+                    .addField("Role List", rolemap)
+                msg.channel.send(embed);
+            }
+        });
+
+        client.on('message', msg => {
             if (msg.content === 'ping') {
                 msg.reply('Pong!')
             }
