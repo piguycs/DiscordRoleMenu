@@ -37,7 +37,7 @@ module.exports = {
                 var listLength = roleList.split(/\r\n|\r|\n/).length
                 var i = 0
 
-                var outputRoles = "Role List:\n" 
+                var outputRoles = "" 
 
                 while (i != listLength) {
                     var thisLine = roleList.split('\n')[i]
@@ -48,7 +48,7 @@ module.exports = {
 
                     if (thisLine != 'everyone') {
                         var myRole = msg.guild.roles.cache.get(thisLine)
-                        myRole = myRole.name
+                        myRole = myRole.name + " " + myRole.position
                     } else {
                         myRole = thisLine
                     }
@@ -60,7 +60,7 @@ module.exports = {
                 
                 msg.channel.send(outputRoles)
 
-                writeFileSync("temp.txt", roleList)
+                writeFileSync("temp.txt", outputRoles)
             }
         });
 
