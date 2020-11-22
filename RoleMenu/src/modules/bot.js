@@ -45,8 +45,14 @@ module.exports = {
                     thisLine = thisLine.replace('<@&', '')
                     thisLine = thisLine.replace('>', '')
                     thisLine = thisLine.replace('@', '')
+
+                    if (thisLine != 'everyone') {
+                        var myRole = msg.guild.roles.cache.get(thisLine)
+                    } else {
+                        myRole = thisLine
+                    }
                     
-                    outputRoles = outputRoles + thisLine + '\n'
+                    outputRoles = outputRoles + myRole + '\n'
                     
                     i += 1
                 }
