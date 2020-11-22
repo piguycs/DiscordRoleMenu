@@ -32,12 +32,31 @@ module.exports = {
                     .map(r => r)
                     .join("\n")
                 if (!roleList) roleList = "No roles"
-                msg.channel.send(roleList);
+                
+
+                var listLength = roleList.split(/\r\n|\r|\n/).length
+                var i = 0
+
+                var outputRoles = "Role List:\n" 
+
+                while (i != listLength) {
+                    var thisLine = roleList.split('\n')[i]
+                    
+                    thisLine = thisLine.replace('<@&', '')
+                    thisLine = thisLine.replace('>', '')
+                    thisLine = thisLine.replace('@', '')
+                    
+                    outputRoles = outputRoles + thisLine + '\n'
+                    
+                    i += 1
+                }
+                
+                msg.channel.send(outputRoles)
 
                 writeFileSync("temp.txt", roleList)
             }
-
         });
+
 
         client.on('message', msg => {
             if (msg.content === 'ping') {
