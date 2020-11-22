@@ -1,5 +1,5 @@
-const activateBtn = document.getElementById("startbutton");
+const activateBtn = document.getElementById("startbutton")
 
-const botjs = require('./modules/bot.js');
+const botjs = require('./modules/bot.js')
 
-activateBtn.onclick = botjs.botsrc();
+activateBtn.onclick = botjs.botsrc()
