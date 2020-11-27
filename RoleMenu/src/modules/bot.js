@@ -37,7 +37,7 @@ module.exports = {
                 var listLength = roleList.split(/\r\n|\r|\n/).length
                 var i = 0
 
-                var outputRoles = "" 
+                var outputRoles = ""
 
                 while (i != listLength) {
                     var thisLine = roleList.split('\n')[i]
