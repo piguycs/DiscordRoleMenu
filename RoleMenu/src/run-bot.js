@@ -1,4 +1,5 @@
 const botjs = require('./modules/bot.js')
+fs = require('fs')
 
 var vue = new Vue({
     el: '#StartButtons',
@@ -10,14 +11,15 @@ var vue = new Vue({
 
         // My Return.js in this file coz smol code
         outputRoles: function() {
-            const lineReader = require('line-reader');
-            var out1 = ""
-
-            lineReader.eachLine('temp.txt', function (line) {
-                out1 = out1.concat(line)
-                console.log(line);
-            });
-        }
-    
+            fs.readFile('temp.txt', 'utf8', function (err, data) {
+                if (err) {
+                    return console.log(err);
+                }
+                var app = new Vue({
+                    el: '#app',
+                    data: {
+                        message: data
+                    }})
+            })}
     }
 })
