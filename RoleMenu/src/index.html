@@ -24,8 +24,8 @@
     
     <div id="StartButtons">
       
-      <button v-on:click="runBot" class="btn btn-outline-light">Get Roles</button>  
-      <button v-on:click="outputRoles" class="btn btn-outline-light read">Display Roles</button>
+      <button @click="runBot" class="btn btn-outline-light">Get Roles</button>  
+      <button @click="outputRoles" class="btn btn-outline-light read">Display Roles</button>
     
     </div>
     
@@ -35,11 +35,9 @@
 
     <br>
 
-    <div id="app">
+    <div id="roles">
       {{ message }}
     </div>
-
-    <script src="vuefile.js"></script>
 
   </body>
 </html>
