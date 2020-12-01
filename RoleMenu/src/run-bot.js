@@ -19,7 +19,9 @@ var vue = new Vue({
                     el: '#roles',
                     data: {
                         message: data
-                    }})
-            })}
+                    }
+                })
+            })
+        }
     }
 })

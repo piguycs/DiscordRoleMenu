@@ -48,7 +48,7 @@ module.exports = {
 
                     if (thisLine != 'everyone') {
                         var myRole = msg.guild.roles.cache.get(thisLine)
-                        myRole = myRole.name + " " + myRole.position
+                        myRole = myRole.name
                     } else {
                         myRole = thisLine
                     }
