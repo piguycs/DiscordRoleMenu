@@ -1,3 +1,7 @@
+
+RoleMenu/temp.json
+RoleMenu/src/secret/token.js
+
 # Logs
 logs
 *.log
@@ -90,3 +94,5 @@ out/
 
 # Temp file
 src/temp.json
+RoleMenu/temp.txt
+RoleMenu/src/temp.txt
