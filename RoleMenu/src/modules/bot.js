@@ -4,7 +4,6 @@ module.exports = {
 
         // its definately dotenv
         const budgetenv = require('../secret/token.js')
-        const output = require('./output.js')
 
         const Discord = require('discord.js')
         const client = new Discord.Client()
