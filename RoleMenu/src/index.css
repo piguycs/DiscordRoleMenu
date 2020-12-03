@@ -4,7 +4,6 @@ body {
   padding: 32px;
   background-color: #36393F;
   color: #F2FFFF;
-  flex: auto;
 }
 
 .btn {
@@ -14,15 +13,14 @@ body {
 #maindiv {
   border-radius: 5px;
   float: left;
-  flex: 90%;
-  width: auto;
+  width: 75%;
+  height: 10vh;
 }
 
 #roles {
   border-radius: 5px;
   float: right;
   background-color: #41454d;
-  height: auto;
-  width: 10rem;
-  flex: 10%;
+  height: 90vh;
+  width: 25%;
 }
