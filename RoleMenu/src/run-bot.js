@@ -1,4 +1,5 @@
 const botjs = require('./modules/bot.js')
+const getObj = require('./return.js')
 fs = require('fs')
 
 var vue = new Vue({
@@ -18,7 +19,7 @@ var vue = new Vue({
                 var text = new Vue({
                     el: '#roles',
                     data: {
-                        message: data
+                        message: getObj.roleObjReturn()
                     }
                 })
             })
