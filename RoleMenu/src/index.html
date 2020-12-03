@@ -15,6 +15,7 @@
 
   </head>
   <body>
+    <div id="maindiv">
 
     <h1>Role Manager Console</h1>
 
@@ -34,9 +35,14 @@
 
 
     <br>
+    </div>
 
     <div id="roles">
-      <p>{{ message }}</p>
+      <ul>
+        <li v-for='roles in message.roles'>
+          {{ roles }}
+        </li>
+      </ul>
     </div>
 
   </body>

@@ -4,8 +4,25 @@ body {
   padding: 32px;
   background-color: #36393F;
   color: #F2FFFF;
+  flex: auto;
 }
 
 .btn {
   margin-top: 5px;
+}
+
+#maindiv {
+  border-radius: 5px;
+  float: left;
+  flex: 90%;
+  width: auto;
+}
+
+#roles {
+  border-radius: 5px;
+  float: right;
+  background-color: #41454d;
+  height: auto;
+  width: 10rem;
+  flex: 10%;
 }

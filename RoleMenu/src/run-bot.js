@@ -12,17 +12,7 @@ var vue = new Vue({
 
         // My Return.js in this file coz smol code
         outputRoles: function() {
-            fs.readFile('temp.txt', 'utf8', function (err, data) {
-                if (err) {
-                    return console.log(err);
-                }
-                var text = new Vue({
-                    el: '#roles',
-                    data: {
-                        message: getObj.roleObjReturn()
-                    }
-                })
-            })
+            getObj.roleObjReturn()
         }
     }
 })
