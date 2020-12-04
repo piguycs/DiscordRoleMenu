@@ -4,9 +4,8 @@ module.exports = {
         const readline = require('readline');
 
         var roleList = {
-            roles: [
-
-            ]
+            roles: [ ],
+            heriechy: [ ]
         }
 
         const fileStream = fs.createReadStream('temp.txt');
