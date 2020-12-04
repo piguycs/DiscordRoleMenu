@@ -16,11 +16,7 @@ module.exports = {
         });
 
         for await (const line of rl) {
-            if (`${line}` === "$BREAKER$") {
-                roleList.roles.push('==========')
-            } else {
-                roleList.roles.push(`${line}`)
-            }
+            roleList.roles.push(`${line}`)
         }
 
         var text = new Vue({

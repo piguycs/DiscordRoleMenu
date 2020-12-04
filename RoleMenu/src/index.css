@@ -24,3 +24,8 @@ body {
   height: 90vh;
   width: 25%;
 }
+
+.roleListP {
+  margin-left: -1rem;
+  margin-bottom: 0.03rem;
+}

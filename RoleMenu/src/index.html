@@ -39,9 +39,10 @@
 
     <div id="roles">
       <ul>
-        <li v-for='roles in message.roles'>
-          {{ roles }}
-        </li>
+        <div v-for='roles in message.roles'>
+          <p v-if="roles != '$BREAKER$'" class="roleListP">{{ roles }}</p>
+          <p v-if="roles === '$BREAKER$'" class="roleListP">YEA HR BREAKS SHIT</p>
+        </div>
       </ul>
     </div>
 
