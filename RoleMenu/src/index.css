@@ -29,3 +29,13 @@ body {
   margin-left: -1rem;
   margin-bottom: 0.03rem;
 }
+
+.breaker {
+  background-color: #30363fa8;
+  height: 15px;
+  width: 100%;
+  padding: 0px;
+  margin: 0px;
+  margin-bottom: 0.03rem;
+  margin-left: -2rem;
+}

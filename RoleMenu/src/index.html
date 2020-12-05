@@ -25,7 +25,7 @@
     
     <div id="StartButtons">
       
-      <button @click="runBot" class="btn btn-outline-light">Start Bot</button>  
+      <button @click="runBot" class="btn btn-outline-light">Start Bot</button>
       <button @click="outputRoles" class="btn btn-outline-light">Display Roles</button>
     
     </div>
@@ -41,7 +41,7 @@
       <ul>
         <div v-for='roles in message.roles'>
           <p v-if="roles != '$BREAKER$'" class="roleListP">{{ roles }}</p>
-          <p v-if="roles === '$BREAKER$'" class="roleListP"></p>
+          <p v-if="roles === '$BREAKER$'" class="breaker"></p>
         </div>
       </ul>
     </div>
