@@ -2,6 +2,7 @@ module.exports = {
     roleObjReturn: async function() {
         const fs = require('fs');
         const readline = require('readline');
+        const vueReturn = require("./vue-role-list-data.js")
 
         var roleList = {
             roles: [ ],
@@ -19,11 +20,6 @@ module.exports = {
             roleList.roles.push(`${line}`)
         }
 
-        var text = new Vue({
-            el: '#roles',
-            data: {
-                message: roleList
-            }
-        })
+        vueReturn.roleListReturn(roleList)
     }
 }
