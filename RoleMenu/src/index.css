@@ -39,3 +39,7 @@ body {
   margin-bottom: 0.03rem;
   margin-left: -2rem;
 }
+
+.consoleBtn {
+  padding-left: 0.6rem;
+}
