@@ -2,7 +2,7 @@ module.exports = {
     roleObjReturn: async function() {
         const fs = require('fs');
         const readline = require('readline');
-        const vueReturn = require("./vue-role-list-data.js")
+        const vueReturn = require("./vue-role-list-data")
 
         var roleList = {
             roles: [ ],

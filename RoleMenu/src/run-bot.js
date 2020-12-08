@@ -1,19 +1,5 @@
-const botjs = require('./modules/bot.js')
-const getObj = require('./modules/return.js')
+const vueStuff = require('./modules/vue-role-list-data')
 
 fs = require('fs')
 
-var vue = new Vue({
-    el: '#StartButtons',
-    
-    methods: {
-        runBot: function() {
-            botjs.botsrc()
-        },
-
-        // My Return.js in this file coz smol code
-        outputRoles: function() {
-            getObj.roleObjReturn()
-        }
-    }
-})
+vueStuff.btnLink()
