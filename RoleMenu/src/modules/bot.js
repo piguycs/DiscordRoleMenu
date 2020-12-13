@@ -87,6 +87,11 @@ module.exports = {
             }
         });
 
+        client.on('message', msg => {
+            if (msg.content === 'konsoladus') {
+                msg.reply('yup working on it')
+            }
+        });
 
         // login
         client.login(budgetenv.token)
